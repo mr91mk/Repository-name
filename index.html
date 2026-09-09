@@ -2,79 +2,69 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SceneForge Studio — digital tools for creators and online businesses.">
-<meta name="theme-color" content="#111315">
-<title>SceneForge Studio — Digital Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SceneForge Studio creates focused digital tools that help creators launch products, build better visuals and simplify their workflow.">
+<meta name="theme-color" content="#0b0d0f">
+<meta property="og:title" content="SceneForge Studio — Digital Tools That Do the Work">
+<meta property="og:description" content="Practical digital systems for creators and small online businesses.">
+<meta property="og:type" content="website">
+<title>SceneForge Studio — Digital Tools That Do the Work</title>
 <style>
-:root{--bg:#0d0f10;--card:#15181b;--line:#292e33;--text:#f7f3eb;--muted:#a5a8ad;--accent:#d7b487;--max:1160px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 22px}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:.15em;font-size:13px}.navlinks{display:flex;gap:22px;color:#c7cacf;font-size:13px}.navlinks a:hover{color:#fff}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:74px 0 82px}.eyebrow{text-transform:uppercase;letter-spacing:.17em;color:var(--accent);font-size:11px;font-weight:800}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.96;letter-spacing:-.045em;margin:15px 0 18px}.hero p{color:#b0b3b8;max-width:590px;font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{padding:12px 16px;border:1px solid var(--line);border-radius:10px;font-weight:800;background:#171a1d}.btn.primary{background:var(--accent);border-color:var(--accent);color:#1c1712}.hero-art{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#141619;box-shadow:0 30px 90px rgba(0,0,0,.3)}.hero-art img{width:100%;display:block}
-.section{padding:60px 0}.section h2{font-size:30px;letter-spacing:-.02em;margin:0 0 8px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:25px}.section-head p{color:var(--muted);margin:0}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.product{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}.product-media{aspect-ratio:16/10;background:linear-gradient(135deg,#eee2d2,#9c7659 58%,#2b241f);border-radius:12px;position:relative;overflow:hidden}.product-media:after{content:"";position:absolute;inset:14% 33%;border:2px solid rgba(255,255,255,.35);border-radius:18px}.product h3{margin:14px 0 4px;font-size:19px}.product p{margin:0 0 14px;color:var(--muted);font-size:13px}.price{font-weight:900;font-size:19px}.product .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.benefit{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.benefit b{display:block;margin-bottom:6px}.benefit span{font-size:12px;color:var(--muted)}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:24px}.about .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.about p{color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:28px 0;color:#777d84;font-size:12px}.social{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}.social a{border:1px solid var(--line);padding:7px 10px;border-radius:8px;color:#aaaeb5}
-@media(max-width:850px){.hero,.about{grid-template-columns:1fr}.products{grid-template-columns:1fr}.benefits{grid-template-columns:1fr 1fr}.navlinks{gap:12px;font-size:11px}.hero{padding:48px 0 58px}}
-@media(max-width:520px){.wrap{padding:0 15px}.nav{height:62px}.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:none}.hero h1{font-size:48px}.section{padding:45px 0}.benefits{grid-template-columns:1fr}}
+:root{--bg:#090b0d;--panel:#101316;--panel2:#15191d;--line:#252b31;--text:#f5f1e9;--muted:#9da5ad;--soft:#c6cbd0;--accent:#d8b98f;--accent2:#f1ddbf;--max:1180px;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top right,#17120c 0,transparent 28%),var(--bg);color:var(--text);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:inherit;text-decoration:none}button,a{transition:.2s ease} .wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:13px;font-weight:900;letter-spacing:.18em}.navlinks{display:flex;gap:24px;color:#c0c5ca;font-size:13px}.navlinks a:hover{color:#fff}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #3a342a;background:#17130f;border-radius:999px;color:var(--accent2);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:76px 0 64px}.hero h1{margin:18px 0 18px;font-size:clamp(46px,7vw,82px);line-height:.94;letter-spacing:-.055em;max-width:820px}.hero h1 span{color:var(--accent2)}.hero p{margin:0;max-width:650px;color:var(--muted);font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:11px;border:1px solid var(--line);background:#14181b;font-weight:850;font-size:13px}.btn:hover{transform:translateY(-1px);border-color:#40474e}.btn.primary{background:var(--accent);border-color:var(--accent);color:#1a1510}.micro{margin-top:13px;color:#747c83;font-size:12px}
+.hero-card{position:relative;background:linear-gradient(145deg,#17191b,#0d0f11);border:1px solid var(--line);border-radius:26px;padding:14px;box-shadow:0 35px 100px rgba(0,0,0,.42)}.hero-card img{display:block;width:100%;border-radius:17px}.hero-card .tag{position:absolute;left:28px;bottom:28px;padding:10px 12px;border-radius:10px;background:rgba(7,8,9,.86);border:1px solid #32373c;color:#ddd6ca;font-size:11px;font-weight:800}
+.section{padding:70px 0}.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:900}.section h2{margin:9px 0 8px;font-size:34px;letter-spacing:-.035em}.lead{margin:0;color:var(--muted);max-width:700px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.product{background:linear-gradient(180deg,#121518,#0e1012);border:1px solid var(--line);border-radius:var(--radius);padding:15px}.product-visual{height:270px;border-radius:15px;overflow:hidden;position:relative;background:linear-gradient(135deg,#efe1cf 0,#a78161 52%,#332a24 100%)}.product-visual.dark{background:linear-gradient(135deg,#101318 0,#4a4f58 52%,#0a0b0d 100%)}.product-visual:before{content:"";position:absolute;width:42%;height:68%;left:29%;top:16%;border:1px solid rgba(255,255,255,.32);border-radius:20px;box-shadow:0 28px 50px rgba(0,0,0,.2)}.product-visual:after{content:"SCENEFORGE";position:absolute;left:24px;bottom:20px;color:rgba(255,255,255,.7);font-size:10px;letter-spacing:.16em;font-weight:900}.dark:after{content:"LAUNCH OS"}.product h3{margin:17px 2px 7px;font-size:20px;letter-spacing:-.015em}.product p{margin:0 2px 17px;color:var(--muted);font-size:13px;min-height:44px}.product-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;border-top:1px solid var(--line)}.price{font-size:22px;font-weight:900}.small{font-size:11px;color:#747c83}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:24px}.feature{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.feature strong{display:block;margin-bottom:7px}.feature span{color:var(--muted);font-size:12px}
+.workflow{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.flow-card{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:18px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.step{padding:13px;border:1px solid var(--line);border-radius:13px;background:#0d1012}.step b{display:block;color:var(--accent2);font-size:11px;margin-bottom:5px}.step span{color:#9da5ad;font-size:12px}
+.faq{display:grid;gap:10px;margin-top:24px}.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin:12px 0 0;font-size:13px}
+.final-cta{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;padding:28px;background:linear-gradient(120deg,#16120d,#101316 58%);border:1px solid #393126;border-radius:20px}.final-cta h2{margin:0 0 7px;font-size:28px}.final-cta p{margin:0;color:var(--muted);max-width:690px}
+footer{border-top:1px solid var(--line);padding:30px 0 45px;color:#6f777f;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a:hover{color:#cbd0d4}
+@media(max-width:900px){.hero,.workflow{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.final-cta{grid-template-columns:1fr}.hero{padding-top:55px}}
+@media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 26px))}.nav{height:65px}.navlinks{gap:12px;font-size:11px}.navlinks a:nth-child(2){display:none}.hero{gap:30px;padding:45px 0}.hero h1{font-size:50px}.hero p{font-size:16px}.products{grid-template-columns:1fr}.product-visual{height:230px}.features{grid-template-columns:1fr}.section{padding:52px 0}.section h2{font-size:29px}.footer-row{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav class="nav">
-  <div class="brand">SCENEFORGE STUDIO</div>
-  <div class="navlinks"><a href="#products">Products</a><a href="#about">About</a><a href="#support">Support</a></div>
-</nav>
-
+<header class="nav"><a class="brand" href="#top">SCENEFORGE STUDIO</a><nav class="navlinks"><a href="#products">Products</a><a href="#why">Why us</a><a href="#faq">FAQ</a><a href="#support">Support</a></nav></header>
+<main id="top">
 <section class="hero">
-  <div>
-    <div class="eyebrow">Digital tools for creators & online businesses</div>
-    <h1>Make the work easier.<br>Make the result better.</h1>
-    <p>Practical digital products built around real workflows — from creating product content to planning and managing a launch.</p>
-    <div class="actions"><a class="btn primary" href="#products">Explore products</a><a class="btn" href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">Try SceneForge</a></div>
-  </div>
-  <div class="hero-art"><img src="assets/sceneforge-cover.png" alt="SceneForge Studio product preview"></div>
+<div>
+<div class="badge"><span class="dot"></span>Focused digital products</div>
+<h1>Build faster. <span>Launch smarter.</span></h1>
+<p>SceneForge Studio creates practical digital tools for creators, product businesses and small teams — built around real work, not feature overload.</p>
+<div class="actions"><a class="btn primary" href="#products">Explore products</a><a class="btn" href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">Get SceneForge</a></div>
+<div class="micro">Instant delivery via Payhip • Use on desktop or mobile • No subscription required</div>
+</div>
+<div class="hero-card"><img src="assets/sceneforge-cover.png" alt="SceneForge Studio preview"><div class="tag">One product photo → many ready-to-use designs</div></div>
 </section>
 
 <section class="section" id="products">
-  <div class="section-head"><div><div class="eyebrow">Featured products</div><h2>Built to be used, not just downloaded.</h2></div><p>More products are added regularly.</p></div>
-  <div class="products">
-    <article class="product">
-      <div class="product-media"></div>
-      <h3>SceneForge — Instant Product Content Studio</h3>
-      <p>Turn one product photo into ready-to-use social, promotional and campaign visuals.</p>
-      <div class="row"><div class="price">$29</div><a class="btn primary" href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">View product</a></div>
-    </article>
-    <article class="product">
-      <div class="product-media" style="background:linear-gradient(135deg,#111319,#4a4d55 58%,#0b0c0e)"></div>
-      <h3>Product Launch OS</h3>
-      <p>Plan the launch, build the offer, follow a timeline, track sales and review the result.</p>
-      <div class="row"><div class="price">$19</div><a class="btn primary" href="https://payhip.com/b/ZzKH8" target="_blank" rel="noopener">View product</a></div>
-    </article>
-  </div>
+<div class="section-head"><div><div class="kicker">The store</div><h2>Tools with a job to do.</h2><p class="lead">Two focused systems are live today. Each is designed to shorten a specific part of the product-business workflow.</p></div></div>
+<div class="products">
+<article class="product"><div class="product-visual"></div><h3>SceneForge — Instant Product Content Studio</h3><p>Create promotional and social visuals from one product image using reusable scenes, layouts and output formats.</p><div class="product-row"><div><div class="price">$29</div><div class="small">One-time purchase</div></div><a class="btn primary" href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">View & buy</a></div></article>
+<article class="product"><div class="product-visual dark"></div><h3>Product Launch OS</h3><p>Plan positioning, offer, timeline, content, sales tracking and post-launch review in one focused workflow.</p><div class="product-row"><div><div class="price">$19</div><div class="small">One-time purchase</div></div><a class="btn primary" href="https://payhip.com/b/ZzKH8" target="_blank" rel="noopener">View & buy</a></div></article>
+</div>
+</section>
+
+<section class="section" id="why">
+<div class="kicker">Why SceneForge</div><h2>Less setup. More useful output.</h2><p class="lead">The studio focuses on compact systems that can be reused across projects rather than tools that take hours to configure.</p>
+<div class="features"><div class="feature"><strong>Practical</strong><span>Built around repeatable tasks that matter to creators and online businesses.</span></div><div class="feature"><strong>Reusable</strong><span>Use the same workflow again for your next product, campaign or launch.</span></div><div class="feature"><strong>Lightweight</strong><span>No heavy software suite or recurring workflow overhead is required.</span></div><div class="feature"><strong>Cross-device</strong><span>Designed with modern desktop and mobile workflows in mind.</span></div></div>
 </section>
 
 <section class="section">
-  <div class="eyebrow">Why SceneForge Studio</div><h2>Simple systems. Useful outcomes.</h2>
-  <div class="benefits" style="margin-top:20px">
-    <div class="benefit"><b>Practical</b><span>Each product is built around a job someone actually needs to do.</span></div>
-    <div class="benefit"><b>Reusable</b><span>Buy once and use the system again across future projects.</span></div>
-    <div class="benefit"><b>Lightweight</b><span>Fast workflows without the overhead of large software suites.</span></div>
-    <div class="benefit"><b>Cross-device</b><span>Products are designed with desktop and mobile use in mind.</span></div>
-  </div>
+<div class="kicker">The workflow</div><h2>From idea to published product.</h2><p class="lead">SceneForge products are designed to fit together into a simple creator workflow.</p>
+<div class="workflow"><div class="flow-card"><strong>Create the visual</strong><div class="steps"><div class="step"><b>01</b><span>Upload</span></div><div class="step"><b>02</b><span>Style</span></div><div class="step"><b>03</b><span>Export</span></div><div class="step"><b>04</b><span>Publish</span></div></div></div><div class="flow-card"><strong>Run the launch</strong><div class="steps"><div class="step"><b>01</b><span>Position</span></div><div class="step"><b>02</b><span>Offer</span></div><div class="step"><b>03</b><span>Launch</span></div><div class="step"><b>04</b><span>Review</span></div></div></div></div>
 </section>
 
-<section class="section" id="about">
-  <div class="about">
-    <div class="card"><div class="eyebrow">About</div><h2>Tools for people who make things.</h2><p>SceneForge Studio creates focused digital tools for creators, product businesses and small teams. The aim is straightforward: remove unnecessary complexity and leave people with a workflow they can keep using.</p></div>
-    <div class="card" id="support"><div class="eyebrow">Support</div><h2>Need help?</h2><p>For product questions, usage issues or licensing questions, contact the studio using the support channel you received with your purchase.</p><div class="social"><a href="mailto:support@sceneforgestudio.com">Email</a><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">LinkedIn</a><a href="#">X</a></div></div>
-  </div>
-</section>
+<section class="section" id="faq"><div class="kicker">FAQ</div><h2>Questions, answered.</h2><div class="faq"><details><summary>How do I receive a product?</summary><p>Click a product button above and complete the purchase on its Payhip product page. Delivery is handled through the product checkout.</p></details><details><summary>Are these subscriptions?</summary><p>No. The current SceneForge products are listed as one-time purchases at the prices shown on this site.</p></details><details><summary>Do I need special software?</summary><p>SceneForge products are designed as lightweight digital workflows. Each product page explains what is included and how to use it.</p></details><details><summary>Where do I ask for support?</summary><p>Use the support information provided on your Payhip purchase page or receipt. This keeps product support tied to the correct purchase.</p></details></div></section>
 
-<footer>
-<div>© 2026 SceneForge Studio. All rights reserved.</div>
-<div class="social"><a href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">SceneForge</a><a href="https://payhip.com/b/ZzKH8" target="_blank" rel="noopener">Product Launch OS</a></div>
-</footer>
+<section class="section" id="support"><div class="final-cta"><div><h2>Ready to build something better?</h2><p>Start with one focused tool. Use it on your next project. Keep the workflow and build from there.</p></div><a class="btn primary" href="#products">Choose a product</a></div></section>
+</main>
+<footer><div class="footer-row"><div>© 2026 SceneForge Studio. All rights reserved.</div><div class="footer-links"><a href="https://payhip.com/b/7pDS3" target="_blank" rel="noopener">SceneForge</a><a href="https://payhip.com/b/ZzKH8" target="_blank" rel="noopener">Product Launch OS</a></div></div></footer>
 </div>
 </body>
 </html>
