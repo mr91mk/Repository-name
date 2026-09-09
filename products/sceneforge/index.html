@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#161616"/>
+<title>SceneForge — Product Styling Kit</title>
+<style>
+:root{--bg:#111;--panel:#1a1a1a;--muted:#9b9b9b;--text:#f5f2ec;--line:#2c2c2c;--accent:#d7b98e}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:rgba(17,17,17,.94);backdrop-filter:blur(10px);z-index:5}
+.brand{font-weight:800;letter-spacing:.08em;font-size:14px}.tag{color:var(--muted);font-size:12px}
+.app{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 64px)}
+.sidebar{padding:18px;border-right:1px solid var(--line);overflow:auto}.canvas-wrap{display:grid;place-items:center;padding:24px;min-height:calc(100vh - 64px)}
+.section{margin-bottom:18px}.section h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 10px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn{border:1px solid var(--line);background:#1e1e1e;color:var(--text);padding:10px;border-radius:10px;cursor:pointer;font-weight:600}.btn:hover{border-color:#555}
+.btn.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+input[type=range]{width:100%} select,.text-input{width:100%;background:#181818;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:10px}
+label{font-size:12px;color:#c7c7c7;display:block;margin:9px 0 6px}
+#stage{width:min(78vw,920px);aspect-ratio:4/5;max-height:78vh;position:relative;overflow:hidden;border-radius:22px;box-shadow:0 30px 100px rgba(0,0,0,.45);background:#d8c2a8}
+.layer{position:absolute;inset:0;pointer-events:none}
+.base-1{background:linear-gradient(135deg,#efe1cc,#b18a68 58%,#3d2e26)}
+.base-2{background:radial-gradient(circle at 20% 25%,#f1e1c6 0 18%,transparent 19%),linear-gradient(135deg,#1e1e1d,#474238 45%,#c5b49b)}
+.base-3{background:linear-gradient(120deg,#d8c8b3 0 28%,#8c735a 28% 60%,#2d241e 60%)}
+.base-4{background:radial-gradient(circle at 65% 30%,#f2efe8 0 8%,transparent 9%),linear-gradient(145deg,#e9dfd0,#8c8880)}
+.base-5{background:linear-gradient(120deg,#231f1b,#6f5a44 50%,#d2b998)}
+.texture-1{background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:7px 7px;mix-blend-mode:soft-light}
+.texture-2{background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 8px);mix-blend-mode:overlay}
+.texture-3{background-image:radial-gradient(ellipse at 20% 20%,rgba(0,0,0,.11),transparent 30%),radial-gradient(ellipse at 80% 65%,rgba(0,0,0,.08),transparent 25%);mix-blend-mode:multiply}
+.texture-4{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 2px,transparent 2px 12px);mix-blend-mode:soft-light}
+.light{mix-blend-mode:screen;background:radial-gradient(circle at 20% 15%,rgba(255,242,211,.75),transparent 38%)}
+.light.cool{background:radial-gradient(circle at 75% 15%,rgba(215,230,255,.6),transparent 38%)}
+.light.window{background:linear-gradient(72deg,transparent 0 18%,rgba(255,244,217,.36) 19% 29%,transparent 30% 40%,rgba(255,244,217,.28) 41% 50%,transparent 51%)}
+.shadow{mix-blend-mode:multiply;background:radial-gradient(ellipse at 50% 58%,rgba(0,0,0,.48),transparent 27%);filter:blur(10px)}
+.shadow.soft{opacity:.55;filter:blur(18px)} .shadow.hard{opacity:.72;filter:blur(4px)}
+.object{position:absolute;border-radius:50%;display:grid;place-items:center;font-size:clamp(20px,4vw,44px);filter:drop-shadow(0 15px 16px rgba(0,0,0,.22))}
+.object.leaf{width:18%;aspect-ratio:1;background:linear-gradient(145deg,#8b6a49,#31482e);border-radius:80% 10% 80% 10%;transform:rotate(-28deg)}
+.object.sun{width:15%;aspect-ratio:1;background:radial-gradient(circle,#f7e3ab 0 35%,#d8b574 36% 100%);border-radius:50%}
+.object.arc{width:30%;height:38%;border:10px solid rgba(235,223,204,.85);border-bottom:0;border-radius:140px 140px 0 0}
+.object.glass{width:23%;height:31%;border:2px solid rgba(255,255,255,.65);border-radius:18px 18px 30px 30px;background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.05));backdrop-filter:blur(2px)}
+.label-chip{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);background:rgba(255,252,247,.9);color:#2a231d;padding:10px 16px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em}
+.controls-bottom{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;justify-content:center}
+.small{font-size:11px;color:var(--muted);line-height:1.45}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{border-right:0;border-bottom:1px solid var(--line);max-height:52vh}.canvas-wrap{min-height:auto;padding:18px}#stage{width:min(92vw,620px);max-height:none}}
+</style>
+</head>
+<body>
+<header><div><div class="brand">SCENEFORGE</div><div class="tag">Product Styling Kit · v0.1</div></div><div class="tag">Works offline · Desktop + Mobile</div></header>
+<div class="app">
+<aside class="sidebar">
+  <div class="section"><h3>Canvas</h3>
+    <div class="row">
+      <button class="btn active" data-ratio="4/5">4:5</button>
+      <button class="btn" data-ratio="1/1">1:1</button>
+      <button class="btn" data-ratio="9/16">9:16</button>
+      <button class="btn" data-ratio="16/9">16:9</button>
+    </div>
+  </div>
+  <div class="section"><h3>Base</h3><div class="row" id="bases"></div></div>
+  <div class="section"><h3>Texture</h3><div class="row" id="textures"></div></div>
+  <div class="section"><h3>Light</h3><div class="row">
+    <button class="btn" data-light="none">None</button>
+    <button class="btn active" data-light="warm">Warm</button>
+    <button class="btn" data-light="cool">Cool</button>
+    <button class="btn" data-light="window">Window</button>
+  </div></div>
+  <div class="section"><h3>Shadow</h3><div class="row">
+    <button class="btn" data-shadow="none">None</button>
+    <button class="btn active" data-shadow="soft">Soft</button>
+    <button class="btn" data-shadow="hard">Hard</button>
+  </div></div>
+  <div class="section"><h3>Scene Elements</h3><div class="row">
+    <button class="btn" data-object="none">None</button>
+    <button class="btn active" data-object="leaf">Leaf</button>
+    <button class="btn" data-object="sun">Sun</button>
+    <button class="btn" data-object="arc">Arc</button>
+    <button class="btn" data-object="glass">Glass</button>
+  </div></div>
+  <div class="section"><h3>Brand Label</h3>
+    <input id="brandText" class="text-input" maxlength="26" placeholder="YOUR BRAND"/>
+    <label>Opacity</label><input id="opacity" type="range" min="0" max="100" value="90"/>
+  </div>
+  <div class="section"><button class="btn" id="randomize" style="width:100%">✨ Create Random Scene</button></div>
+  <div class="section"><button class="btn" id="export" style="width:100%;border-color:var(--accent)">⬇ Export PNG</button></div>
+  <div class="small">This demo is intentionally offline-first. The commercial version can ship with hundreds of premium JPG/PNG/SVG assets while keeping the same lightweight generator.</div>
+</aside>
+<main class="canvas-wrap">
+  <div id="stage">
+    <div id="base" class="layer base-1"></div>
+    <div id="texture" class="layer texture-1"></div>
+    <div id="light" class="layer light"></div>
+    <div id="shadow" class="layer shadow soft"></div>
+    <div id="obj" class="object leaf" style="left:12%;top:14%"></div>
+    <div id="chip" class="label-chip">YOUR BRAND</div>
+  </div>
+  <div class="controls-bottom"><span class="small">Tip: generate a scene, then screenshot/export it for Instagram, product ads, Pinterest or presentations.</span></div>
+</main>
+</div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const base=$('#base'), texture=$('#texture'), light=$('#light'), shadow=$('#shadow'), obj=$('#obj'), chip=$('#chip'), stage=$('#stage');
+const bases=['base-1','base-2','base-3','base-4','base-5'], textures=['texture-1','texture-2','texture-3','texture-4'];
+function buttons(containerId, items, attr, labelPrefix){
+  const box=$(containerId); box.innerHTML='';
+  items.forEach((v,i)=>{const b=document.createElement('button'); b.className='btn'+(i===0?' active':''); b.textContent=labelPrefix+(i+1); b.dataset[attr]=v; box.appendChild(b);});
+}
+buttons('#bases',bases,'base','B'); buttons('#textures',textures,'texture','T');
+function activate(groupSelector, el){$$(groupSelector).forEach(x=>x.classList.toggle('active',x===el));}
+$$('[data-base]').forEach(b=>b.onclick=()=>{base.className='layer '+b.dataset.base;activate('[data-base]',b)});
+$$('[data-texture]').forEach(b=>b.onclick=()=>{texture.className='layer '+b.dataset.texture;activate('[data-texture]',b)});
+$$('[data-light]').forEach(b=>b.onclick=()=>{const v=b.dataset.light; light.className='layer '+(v==='none'?'':('light '+(v==='warm'?'':v))); activate('[data-light]',b)});
+$$('[data-shadow]').forEach(b=>b.onclick=()=>{const v=b.dataset.shadow; shadow.className='layer shadow '+(v==='none'?'':v); shadow.style.display=v==='none'?'none':'block'; activate('[data-shadow]',b)});
+$$('[data-object]').forEach(b=>b.onclick=()=>{const v=b.dataset.object; obj.className='object '+(v==='none'?'':v); obj.style.display=v==='none'?'none':'grid'; activate('[data-object]',b)});
+$$('[data-ratio]').forEach(b=>b.onclick=()=>{stage.style.aspectRatio=b.dataset.ratio;activate('[data-ratio]',b)});
+$('#brandText').addEventListener('input',e=>chip.textContent=e.target.value||'YOUR BRAND');
+$('#opacity').addEventListener('input',e=>chip.style.opacity=e.target.value/100);
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+$('#randomize').onclick=()=>{
+  base.className='layer '+pick(bases); texture.className='layer '+pick(textures);
+  const ls=['none','warm','cool','window'], ss=['none','soft','hard'], os=['none','leaf','sun','arc','glass'];
+  const lv=pick(ls), sv=pick(ss), ov=pick(os);
+  light.className='layer '+(lv==='none'?'':('light '+(lv==='warm'?'':lv)));
+  shadow.className='layer shadow '+(sv==='none'?'':sv); shadow.style.display=sv==='none'?'none':'block';
+  obj.className='object '+(ov==='none'?'':ov); obj.style.display=ov==='none'?'none':'grid';
+  obj.style.left=(8+Math.random()*70)+'%'; obj.style.top=(8+Math.random()*70)+'%';
+};
+function exportPNG(){
+  const r=stage.getBoundingClientRect(), w=1200, h=Math.round(1200*(r.height/r.width));
+  const c=document.createElement('canvas'); c.width=w; c.height=h; const ctx=c.getContext('2d');
+  // Render a simplified export from computed styles; keeps the demo dependency-free.
+  const grad=ctx.createLinearGradient(0,0,w,h);
+  const bg=getComputedStyle(base).backgroundImage;
+  const palette=[['#efe1cc','#b18a68','#3d2e26'],['#1e1e1d','#474238','#c5b49b'],['#d8c8b3','#8c735a','#2d241e'],['#e9dfd0','#8c8880','#ffffff'],['#231f1b','#6f5a44','#d2b998']];
+  const idx=[...document.getElementById('base').classList].findIndex(x=>x.startsWith('base-'))-1;
+  const p=palette[Math.max(0,idx)];
+  grad.addColorStop(0,p[0]);grad.addColorStop(.55,p[1]);grad.addColorStop(1,p[2]);ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
+  if (obj.style.display!=='none'){const s=Math.min(w,h)*.18; const ox=parseFloat(obj.style.left)/100*w, oy=parseFloat(obj.style.top)/100*h; ctx.save();ctx.translate(ox+s/2,oy+s/2);ctx.rotate(-.35);ctx.fillStyle='#536447';ctx.beginPath();ctx.ellipse(0,0,s*.45,s*.7,0,0,Math.PI*2);ctx.fill();ctx.restore();}
+  ctx.fillStyle=chip.style.backgroundColor||'rgba(255,252,247,.9)'; ctx.globalAlpha=parseFloat(chip.style.opacity||1); ctx.fillRect(w*.28,h*.86,w*.44,h*.06);
+  ctx.globalAlpha=1;ctx.fillStyle='#2a231d';ctx.textAlign='center';ctx.font='800 28px Inter, sans-serif';ctx.fillText(chip.textContent,w/2,h*.898);
+  const a=document.createElement('a');a.download='sceneforge-scene.png';a.href=c.toDataURL('image/png');a.click();
+}
+$('#export').onclick=exportPNG;
+</script>
+</body></html>
